@@ -18,6 +18,24 @@ python -m pip install -r requirements.txt
 ```
 You should now be able to run `embedding_example.py` and `zero_shot_example.py`.
 
+## Model weights
+
+The pretrained weights are stored in `experiments/echo-clip/` using the same convention as ECGFlow.
+
+**Clone the weights** (run from the `echo_CLIP/` directory):
+
+```bash
+git clone https://huggingface.co/mkaichristensen/echo-clip experiments/echo-clip
+```
+
+For the retrieval variant (EchoCLIP-R):
+
+```bash
+git clone https://huggingface.co/mkaichristensen/echo-clip-r experiments/echo-clip-r
+```
+
+The key file is `experiments/echo-clip/open_clip_pytorch_model.bin`.  When training with `MultiModal_LVH`, pass the directory path via `--echo_weights echo_CLIP/experiments/echo-clip`.
+
 ## Repo contents
 
 * `embedding_example.py` demonstrates how to load EchoCLIP-R's weights and use them to calculate the similarity between an example echocardiogram and example report text.
